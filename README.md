@@ -3,8 +3,11 @@
 ## Build
 
 makedir bin
+
 make
+
 make changeToD
+
 make makeCSR
 
 ### Data format
@@ -16,9 +19,13 @@ At first, we have text file
 ​	./data/dblp/dblp.txt:
 
 n,m
+
 0 1
+
 0 2
+
 2 3
+
 ...
 
 
