@@ -1,2 +1,106 @@
-# dpcolor
-Lightning Fast and Space Efficient $k$-clique Counting
+# kclique counting
+
+## Build
+
+make
+
+make changeToD
+
+make makeCSR
+
+### Data format
+
+use com-DBLP as the example:
+
+At first, we have text file 
+
+​	./data/dblp/dblp.txt:
+
+n,m
+
+0 1
+
+0 2
+
+2 3
+
+...
+
+
+
+run: bin/makeCSR ./data/dblp/dblp.txt ./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin,
+
+and we get:
+
+​	./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin
+
+run bin/changeToD -edge ./data/dblp/tmpedge.bin  -idx ./data/dblp/tmpidx.bin -v 425957
+
+-v is the node num.
+
+and we get ./data/dblp/tmpedge.bindeg.bin ./data/dblp/tmpidx.bindeg.bin
+
+rename ./data/dblp/tmpedge.bindeg.bin->./data/dblp/edge.bin
+
+rename ./data/dblp/tmpidx.bindeg.bin->./data/dblp/idx.bin
+
+add file s.txt under the ./data/dblp/:
+
+425957
+30
+2-clique: 1049866.00
+3-clique: 2224385.00
+4-clique: 16713192.00
+
+...  
+
+30-clique: 2952522344434315298898706432.00
+
+The next is the s.txt for com-lj:
+
+4036538
+8
+3-clique: 177820130.00
+4-clique: 5216918441.00
+5-clique: 246378629120.00
+6-clique: 10990740312954.00
+7-clique: 449022426169164.00
+8-clique: 16890998195437619.00
+
+At last,  ./data/dblp/edge.bin, ./data/dblp/idx.bin and ./data/dblp/s.txt are what we need.
+
+
+
+If you don't have the exact count of the cliques, just write the node number:
+
+./data/dblp/s.txt:
+
+425957
+
+
+
+### run
+
+dpcolorpath: bin/run -f data folder -k clique size -N number of samples -cccpath
+
+bin/run -f data/dblp/ -k 8 -N 100000 -cccpath
+
+
+
+
+dpcolor:bin/run -f data folder -k clique size -N number of samples -cc
+
+bin/run -f data/dblp/ -k 8 -N 100000 -cc
+
+
+
+parallel dpcolorpath: bin/run -f data folder -k clique size -N number of samples -deb 3 -p threads
+
+bin/run -f data/dblp/ -k 8 -N 100000 -deb 3 -p 10
+
+
+
+parallel dpcolor:bin/run -f data folder -k clique size -N number of samples -cc -deb 3 -p threads
+
+bin/run -f data/dblp/ -k 8 -N 100000 -deb 3 -cc -p 10
+
