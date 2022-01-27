@@ -2,10 +2,9 @@
 
 ## Build
 
+makedir bin
 make
-
 make changeToD
-
 make makeCSR
 
 ### Data format
@@ -17,20 +16,14 @@ At first, we have text file
 ​	./data/dblp/dblp.txt:
 
 n,m
-
 0 1
-
 0 2
-
 2 3
-
 ...
 
 
 
-run: bin/makeCSR ./data/dblp/dblp.txt ./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin,
-
-and we get:
+run: bin/makeCSR ./data/dblp/dblp.txt ./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin, and we get:
 
 ​	./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin
 
