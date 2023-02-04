@@ -1,3 +1,5 @@
+The source code of the work "Lightning Fast and Space Efficient k-clique Counting, www'22, https://doi.org/10.1145/3485447.3512167".
+
 # kclique counting
 
 ## Build
@@ -104,3 +106,4 @@ parallel dpcolor:bin/run -f data folder -k clique size -N number of samples -cc 
 
 bin/run -f data/dblp/ -k 8 -N 100000 -deb 3 -cc -p 10
 
+### remark that the Randomness lacks in this version.
