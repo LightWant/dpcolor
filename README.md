@@ -87,6 +87,9 @@ dpcolorpath: bin/run -f data folder -k clique size -N number of samples -cccpath
 
 bin/run -f data/dblp/ -k 8 -N 100000 -cccpath
 
+output:|k| alpha| count of samples|time of exact part| size of exact part| the depth of search| count in exact part|not expected:the lack count | appDensity hittedcount real_sample_times  the percentage of the cliques in the sparse part| approximate count | the percentage of the cliques in the dense part among the approximate count | sampling running time| total running time| error
+
+example:|8| 1.0| 100000| 0.03| 1739| d13| 5008853.0|not expected 53 | 1.000000 100000 100000 99.99935555%| 777243510729| 0.00%| 0.07| 0.10| 0.00%
 
 
 
