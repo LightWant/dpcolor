@@ -1,3 +1,5 @@
+# The work has been extended to a journal paper "Efficient k-Clique Counting on Large Graphs: The Power of Color-Based Sampling Approaches". https://github.com/LightWant/tripath_tkde.
+
 The source code of the work "Lightning Fast and Space Efficient k-clique Counting, www'22, https://doi.org/10.1145/3485447.3512167".
 
 # kclique counting
