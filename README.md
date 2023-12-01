@@ -6,13 +6,13 @@ The source code of the work "Lightning Fast and Space Efficient k-clique Countin
 
 ## Build
 
-makedir bin
+`mkdir bin`
 
-make
+`make`
 
-make changeToD
+`make bin/changeToD`
 
-make makeCSR
+`make bin/makeCSR`
 
 ### Data format
 
@@ -34,21 +34,27 @@ n,m
 
 
 
-run: bin/makeCSR ./data/dblp/dblp.txt ./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin, and we get:
+run: 
+`bin/makeCSR ./data/dblp/dblp.txt ./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin`
+
+and we get:
 
 ​	./data/dblp/tmpedge.bin ./data/dblp/tmpidx.bin
 
-run bin/changeToD -edge ./data/dblp/tmpedge.bin  -idx ./data/dblp/tmpidx.bin -v 425957
+run 
+`bin/changeToD -edge ./data/dblp/tmpedge.bin  -idx ./data/dblp/tmpidx.bin -v 425957`
 
--v is the node num.
+-v is the number of nodes.
 
 and we get ./data/dblp/tmpedge.bindeg.bin ./data/dblp/tmpidx.bindeg.bin
 
 rename ./data/dblp/tmpedge.bindeg.bin->./data/dblp/edge.bin
+`mv ./data/dblp/tmpedge.bindeg.bin ./data/dblp/edge.bin`
 
 rename ./data/dblp/tmpidx.bindeg.bin->./data/dblp/idx.bin
+`mv ./data/dblp/tmpidx.bindeg.bin ./data/dblp/idx.bin`
 
-add file s.txt under the ./data/dblp/:
+the file s.txt under the ./data/dblp/ shows the number of cliques:
 
 425957
 30
